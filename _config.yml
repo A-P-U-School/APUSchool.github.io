@@ -1,0 +1,10 @@
+title: APU-SCHOOL
+description: 愛知県立大学の学生による学習支援ボランティア団体 APU-SCHOOL の公式サイト
+url: "https://apuschool.github.io"
+baseurl: ""
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
