@@ -1,55 +1,59 @@
 const header = document.getElementById("header");
-const navContent = document.getElementById("nav-content");
-const navAction = document.getElementById("navAction");
-const navToggle = document.getElementById("nav-toggle");
-const colorTargets = document.querySelectorAll(".toggleColour");
+const nav = document.getElementById("nav-content");
+const action = document.getElementById("navAction");
+const toggle = document.getElementById("nav-toggle");
+const links = document.querySelectorAll(".toggleColour");
+const fixedHeader = document.body.dataset.fixedHeader === "true";
 
-function setHeaderScrolled(isScrolled) {
-  if (!header || !navContent) {
+function setHeader(active) {
+  if (!header || !nav) {
     return;
   }
 
-  header.classList.toggle("bg-white", isScrolled);
-  header.classList.toggle("shadow", isScrolled);
+  header.classList.toggle("bg-white", active);
+  header.classList.toggle("shadow", active);
 
-  if (navAction) {
-    navAction.classList.toggle("gradient", isScrolled);
-    navAction.classList.toggle("text-white", isScrolled);
-    navAction.classList.toggle("bg-white", !isScrolled);
-    navAction.classList.toggle("text-gray-800", !isScrolled);
+  if (action) {
+    action.classList.toggle("gradient", active);
+    action.classList.toggle("text-white", active);
+    action.classList.toggle("bg-white", !active);
+    action.classList.toggle("text-gray-800", !active);
   }
 
-  colorTargets.forEach((target) => {
-    target.classList.toggle("text-gray-800", isScrolled);
-    target.classList.toggle("text-white", !isScrolled);
+  links.forEach((link) => {
+    link.classList.toggle("text-gray-800", active);
+    link.classList.toggle("text-white", !active);
   });
 
-  navContent.classList.toggle("bg-white", isScrolled);
-  navContent.classList.toggle("bg-gray-100", !isScrolled);
+  nav.classList.toggle("bg-white", active);
+  nav.classList.toggle("bg-gray-100", !active);
 }
 
-function updateHeaderOnScroll() {
-  setHeaderScrolled(window.scrollY > 10);
+function syncHeader() {
+  setHeader(fixedHeader || window.scrollY > 10);
 }
 
-function closeMobileMenuWhenOutside(event) {
-  if (!navContent || !navToggle) {
+function closeMenu(event) {
+  if (!nav || !toggle) {
     return;
   }
 
-  const clickedToggle = navToggle.contains(event.target);
-  const clickedMenu = navContent.contains(event.target);
+  const onToggle = toggle.contains(event.target);
+  const inMenu = nav.contains(event.target);
 
-  if (clickedToggle) {
-    navContent.classList.toggle("hidden");
+  if (onToggle) {
+    nav.classList.toggle("hidden");
     return;
   }
 
-  if (!clickedMenu) {
-    navContent.classList.add("hidden");
+  if (!inMenu) {
+    nav.classList.add("hidden");
   }
 }
 
-updateHeaderOnScroll();
-document.addEventListener("scroll", updateHeaderOnScroll);
-document.addEventListener("click", closeMobileMenuWhenOutside);
+// ページによっては常にスクロール後のナビ表示にする。
+syncHeader();
+if (!fixedHeader) {
+  document.addEventListener("scroll", syncHeader);
+}
+document.addEventListener("click", closeMenu);
