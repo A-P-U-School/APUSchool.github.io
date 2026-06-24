@@ -199,13 +199,17 @@ body {
   }
 }
 
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
 @media (min-width: 1024px) {
   .hero-wave {
     margin-top: -6rem;
   }
-}
 
-@media (min-width: 768px) {
   .section-title {
     font-size: 3rem;
   }
