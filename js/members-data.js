@@ -28,5 +28,14 @@ window.memberData = [
     alt: "我妻信実のプロフィール写真",
     message: "一緒に楽しく活動していきましょう！",
     certs: "英検5級，大型・大型特殊・牽引自動車第二種免許"
+  },
+  {
+    name: "堀 瑞葉",
+    kana: "ほり みづは",
+    roman: "Hori Mizuha",
+    dept: "社会福祉学科4年",
+    photo: "img/member/mizuha.jpeg",
+    alt: "堀瑞葉のプロフィール写真",
+    message: "あっぷすくーるに来たいって言ってもらえるような，楽しい・安心できる居場所をつくっていきます．"
   }
 ];
