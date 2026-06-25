@@ -49,21 +49,21 @@
   </head>
   <body class="leading-normal tracking-normal text-white gradient">
     <nav id="header" class="fixed w-full z-30 top-0 bg-white text-gray-900 shadow">
-      <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+      <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2 px-4 lg:px-6">
         <div class="pl-4 flex items-center">
-          <a class="text-gray-900 no-underline hover:no-underline font-bold text-2xl lg:text-4xl flex items-center" href="#">
+          <a class="nav-brand text-gray-900 no-underline hover:no-underline font-bold text-2xl lg:text-4xl flex items-center" href="#">
             <img src="img/page/header.png" alt="APU-SCHOOL Logo" class="h-8 lg:h-10 mr-2"> あっぷすくーる
           </a>
         </div>
         <div class="block lg:hidden pr-4">
-          <button id="nav-toggle" class="flex items-center p-1 text-gray-900 hover:text-orange-600 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+          <button id="nav-toggle" class="flex items-center p-1 text-gray-900 hover:text-orange-600 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" aria-label="メニューを開閉" aria-expanded="false" aria-controls="nav-content">
             <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <title>Menu</title>
               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
             </svg>
           </button>
         </div>
-        <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white text-gray-800 p-4 lg:p-0 z-20" id="nav-content">
+        <div class="nav-menu w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white text-gray-800 p-4 lg:p-0 z-20" id="nav-content">
           <ul class="list-reset lg:flex justify-end flex-1 items-center">
             <li class="mr-3">
               <a class="nav-link relative inline-block py-2 px-4 font-semibold text-gray-900" href="#about">あっぷすくーるとは</a>
@@ -93,11 +93,11 @@
       </div>
       <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
     </nav>
-    <div class="pt-24 lg:pt-36">
+    <div class="site-hero pt-24 lg:pt-36">
       <div class="container px-6 mx-auto flex flex-wrap flex-col lg:flex-row items-center">
         <div class="flex flex-col w-full lg:w-2/5 justify-center items-start text-center lg:text-left">
           <p class="uppercase tracking-loose w-full text-sm">愛知県立大学 学習支援ボランティア</p>
-          <h1 class="my-4 text-4xl lg:text-5xl font-bold leading-tight">
+          <h1 class="hero-title my-4 text-4xl lg:text-5xl font-bold leading-tight">
             あっぷすくーるで見つける<br>「わかった！」の瞬間
           </h1>
           <p class="leading-normal text-lg lg:text-xl mb-8">
@@ -111,7 +111,7 @@
         </div>
         <div class="w-full lg:w-3/5 py-6 text-center">
           <img
-            class="w-full md:w-4/5 lg:w-4/5 z-50 mx-auto rounded-2xl"
+            class="hero-image w-full md:w-4/5 lg:w-4/5 z-50 mx-auto rounded-2xl"
             src="img/page/hero2.png"
             alt="学習支援のイメージ"
           />
