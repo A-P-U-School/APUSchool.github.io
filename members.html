@@ -1,3 +1,6 @@
+---
+page_id: members
+---
 <!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -18,105 +21,33 @@
     <meta property="og:url" content="https://apuschool.github.io/members.html" />
     <meta property="og:image" content="https://apuschool.github.io/img/page/hero2.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
     <link rel="stylesheet" href="css/site.css" />
   </head>
-  <body class="leading-normal tracking-normal text-gray-800">
-    <nav id="header" class="fixed w-full z-30 top-0 bg-white text-gray-900 shadow">
-      <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2 px-4 lg:px-6">
-        <div class="pl-4 flex items-center">
-          <a class="nav-brand text-gray-900 no-underline hover:no-underline font-bold text-2xl lg:text-4xl flex items-center" href="index.html">
-            <img src="img/page/header.png" alt="APU-SCHOOL Logo" class="h-8 lg:h-10 mr-2"> あっぷすくーる
-          </a>
-        </div>
-        <div class="block lg:hidden pr-4">
-          <button id="nav-toggle" class="flex items-center p-1 text-gray-900 hover:text-orange-600 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" aria-label="メニューを開閉" aria-expanded="false" aria-controls="nav-content">
-            <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
-          </button>
-        </div>
-        <div class="nav-menu w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white text-gray-800 p-4 lg:p-0 z-20" id="nav-content">
-          <ul class="list-reset lg:flex justify-end flex-1 items-center">
-            <li class="mr-3">
-              <a class="nav-link relative inline-block py-2 px-4 font-semibold text-gray-900" href="index.html#about">あっぷすくーるとは</a>
-            </li>
-            <li class="mr-3">
-              <a class="nav-link relative inline-block py-2 px-4 font-semibold text-gray-900" href="index.html#overview">活動概要</a>
-            </li>
-            <li class="mr-3">
-              <a class="nav-link relative inline-block py-2 px-4 font-semibold text-gray-900" href="index.html#join">参加方法</a>
-            </li>
-            <li class="mr-3">
-              <a class="nav-link relative inline-block py-2 px-4 font-semibold text-gray-900" href="members.html">メンバー紹介</a>
-            </li>
-            <li class="mr-3">
-              <a class="nav-link relative inline-block py-2 px-4 font-semibold text-gray-900" href="https://www.instagram.com/apu_school/?hl=ja" target="_blank" rel="noopener noreferrer">Instagram</a>
-            </li>
-          </ul>
-          <a href="https://lin.ee/r58ZBUA" target="_blank" rel="noopener noreferrer">
-            <button
-              id="navAction"
-              class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-            >
-              お問い合わせ
-            </button>
-          </a>
-        </div>
-      </div>
-      <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
-    </nav>
+  <body>
+    {% include site-header.html %}
 
-    <section class="members-section bg-gray-100 py-24 md:py-32">
-        <div class="container max-w-5xl mx-auto px-6">
-            <h2 class="section-title">運営メンバー紹介</h2>
-            <div class="section-divider gradient"></div>
-
-            <div id="members-list" class="flex flex-wrap -mx-4 justify-center"></div>
+    <main class="members-page">
+      <!-- メンバー紹介ページのhero画像を変更する場合は、次の行の url(...) を書き換えてください。 -->
+      <section class="members-hero" style="--hero-image: url('../img/page/hero2.png')">
+        <div>
+          <p>APU-SCHOOL / MEMBERS</p>
+          <h2>運営メンバー紹介</h2>
+          <p class="members-hero-lead">
+            あっぷすくーるの運営メンバーを紹介します．
+          </p>
         </div>
-    </section>
+      </section>
 
-    <footer class="bg-white">
-      <div class="container mx-auto px-8">
-        <div class="w-full flex flex-col lg:flex-row py-6">
-          <div class="flex-1 mb-6 text-black">
-            <a class="text-orange-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="index.html">
-              あっぷすくーる
-            </a>
-          </div>
-          <div class="flex-1">
-            <p class="uppercase text-gray-500 md:mb-6">メニュー</p>
-            <ul class="list-reset mb-6">
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="index.html" class="no-underline hover:underline text-gray-800 hover:text-orange-500">トップ</a>
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="index.html#about" class="no-underline hover:underline text-gray-800 hover:text-orange-500">あっぷすくーるとは</a>
-              </li>
-               <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="index.html#overview" class="no-underline hover:underline text-gray-800 hover:text-orange-500">活動概要</a>
-              </li>
-               <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="index.html#join" class="no-underline hover:underline text-gray-800 hover:text-orange-500">参加方法</a>
-              </li>
-            </ul>
-          </div>
-          <div class="flex-1">
-            <p class="uppercase text-gray-500 md:mb-6">SNS</p>
-            <ul class="list-reset mb-6">
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="https://lin.ee/r58ZBUA" target="_blank" rel="noopener noreferrer" class="no-underline hover:underline text-gray-800 hover:text-orange-500">公式LINE</a>
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="https://www.instagram.com/apu_school/?hl=ja" target="_blank" rel="noopener noreferrer" class="no-underline hover:underline text-gray-800 hover:text-orange-500">Instagram</a>
-              </li>
-            </ul>
-          </div>
+      <section class="members-section" aria-labelledby="members-title">
+        <div class="section-heading">
+          <span>MEMBERS</span>
+          <h2 id="members-title">私たちがサポートします</h2>
         </div>
-      </div>
-    </footer>
+        <div id="members-list" class="members-grid"></div>
+      </section>
+    </main>
+
+    {% include site-footer.html %}
 
     <script src="js/site.js"></script>
     <script src="js/members-data.js"></script>

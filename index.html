@@ -1,3 +1,6 @@
+---
+page_id: home
+---
 <!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -19,7 +22,7 @@
     <meta property="og:url" content="https://apuschool.github.io/" />
     <meta property="og:image" content="https://apuschool.github.io/img/page/hero2.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="google-site-verification" content="C7vORq3rphixxjygQZgIP0mT5n0lrGfPUDYw9HHqWdY" /> <!--google検索用-->
+    <meta name="google-site-verification" content="C7vORq3rphixxjygQZgIP0mT5n0lrGfPUDYw9HHqWdY" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -43,238 +46,129 @@
         }
       }
     </script>
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
     <link rel="stylesheet" href="css/site.css" />
   </head>
-  <body class="leading-normal tracking-normal text-white gradient">
-    <nav id="header" class="fixed w-full z-30 top-0 bg-white text-gray-900 shadow">
-      <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2 px-4 lg:px-6">
-        <div class="pl-4 flex items-center">
-          <a class="nav-brand text-gray-900 no-underline hover:no-underline font-bold text-2xl lg:text-4xl flex items-center" href="#">
-            <img src="img/page/header.png" alt="APU-SCHOOL Logo" class="h-8 lg:h-10 mr-2"> あっぷすくーる
-          </a>
-        </div>
-        <div class="block lg:hidden pr-4">
-          <button id="nav-toggle" class="flex items-center p-1 text-gray-900 hover:text-orange-600 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" aria-label="メニューを開閉" aria-expanded="false" aria-controls="nav-content">
-            <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
-          </button>
-        </div>
-        <div class="nav-menu w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white text-gray-800 p-4 lg:p-0 z-20" id="nav-content">
-          <ul class="list-reset lg:flex justify-end flex-1 items-center">
-            <li class="mr-3">
-              <a class="nav-link relative inline-block py-2 px-4 font-semibold text-gray-900" href="#about">あっぷすくーるとは</a>
-            </li>
-            <li class="mr-3">
-              <a class="nav-link relative inline-block py-2 px-4 font-semibold text-gray-900" href="#overview">活動概要</a>
-            </li>
-            <li class="mr-3">
-              <a class="nav-link relative inline-block py-2 px-4 font-semibold text-gray-900" href="#join">参加方法</a>
-            </li>
-            <li class="mr-3">
-              <a class="nav-link relative inline-block py-2 px-4 font-semibold text-gray-900" href="members.html">メンバー紹介</a>
-            </li>
-            <li class="mr-3">
-              <a class="nav-link relative inline-block py-2 px-4 font-semibold text-gray-900" href="https://www.instagram.com/apu_school/?hl=ja" target="_blank" rel="noopener noreferrer">Instagram</a>
-            </li>
-          </ul>
-          <a href="https://lin.ee/r58ZBUA" target="_blank" rel="noopener noreferrer">
-            <button
-              id="navAction"
-              class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-            >
-              お問い合わせ
-            </button>
-          </a>
-        </div>
-      </div>
-      <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
-    </nav>
-    <div class="site-hero pt-24 lg:pt-36">
-      <div class="site-hero__inner container px-6 mx-auto flex flex-wrap flex-col lg:flex-row items-center">
-        <div class="site-hero__copy flex flex-col w-full lg:w-5/12 justify-center items-start text-center lg:text-left">
-          <p class="hero-kicker uppercase tracking-loose w-full text-sm">愛知県立大学 学習支援ボランティア</p>
-          <h1 class="hero-title my-4 text-4xl lg:text-5xl font-bold leading-tight">
-            あっぷすくーるで見つける<br>「わかった！」の瞬間
-          </h1>
-          <p class="hero-lead leading-normal text-lg lg:text-xl">
-            私たちは，愛知県立大学の学生が運営する学習支援ボランティア団体です．毎週火曜，リニモテラスで小中学生の学びをサポートしています．
+  <body>
+    {% include site-header.html %}
+
+    <main class="home">
+      <!-- トップページのhero画像を変更する場合は、次の行の url(...) を書き換えてください。 -->
+      <section class="cover" style="--hero-image: url('../img/page/hero2.png')" aria-label="あっぷすくーる メインビジュアル">
+        <div class="cover-overlay">
+          <p class="cover-kicker">APU-SCHOOL / Learning Support Volunteer</p>
+          <h2>ここで見つける<br /><span class="cover-title-line">「わかった！」の瞬間</span></h2>
+          <p>
+            私たちは，愛知県立大学の学生が主体となって運営する学習支援ボランティア団体です．
+            毎週火曜，長久手市のリニモテラスで子どもたちの学びをサポートしています．
           </p>
         </div>
-        <div class="site-hero__media w-full lg:w-7/12 py-6 text-center">
-          <img
-            class="hero-image w-full z-50 mx-auto rounded-2xl"
-            src="img/page/hero2.png"
-            alt="学習支援のイメージ"
-          />
+      </section>
+
+      <section id="about" class="content-section">
+        <div class="section-heading">
+          <span>ABOUT</span>
+          <h2>あっぷすくーるの3つの特徴</h2>
         </div>
-      </div>
-    </div>
-
-    <div class="hero-wave" aria-hidden="true"></div>
-
-    <section id="about" class="bg-white border-b py-16 md:py-20">
-      <div class="container max-w-5xl mx-auto px-6">
-        <h2 class="section-title">あっぷすくーるの3つの特徴</h2>
-        <div class="section-divider gradient"></div>
-        <div class="flex flex-wrap justify-center">
-          <div class="w-full md:w-1/2 lg:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
-            <div class="feature-card">
-              <div class="feature-card__body">
-                <h3 class="feature-card__title">一人ひとりに合わせたサポート</h3>
-                <p class="text-gray-600 text-base">
-                  子どもの学習ペースや理解度に合わせ，大学生がマンツーマンに近い形で丁寧にサポートします．
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="w-full md:w-1/2 lg:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
-            <div class="feature-card">
-              <div class="feature-card__body">
-                <h3 class="feature-card__title">大学生との楽しい学び</h3>
-                <p class="text-gray-600 text-base">
-                  年の近いお兄さん・お姉さんのような存在として，勉強の楽しさや大切さを伝えます．
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="w-full md:w-1/2 lg:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
-            <div class="feature-card">
-              <div class="feature-card__body">
-                <h3 class="feature-card__title">安心・安全な活動場所</h3>
-                <p class="text-gray-600 text-base">
-                  長久手市社会福祉協議会に登録済みの団体です．公共施設「リニモテラス」で安全に活動しています．
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="overview" class="bg-gray-100 py-16 md:py-20">
-      <div class="container max-w-5xl mx-auto px-6">
-        <h2 class="section-title">活動概要</h2>
-        <div class="section-divider gradient"></div>
-        <div class="overview-panel">
-          <div class="overview-row">
-            <div class="overview-label">日時</div>
-            <div class="overview-value">毎週火曜日 18:00〜20:00<span class="text-sm block">（変更になる場合があります）</span></div>
-          </div>
-          <div class="overview-row">
-            <div class="overview-label">場所</div>
-            <div class="overview-value"><a href="https://linimoterrace.jp/" target="_blank" rel="noopener noreferrer" class="text-orange-500 hover:underline">リニモテラス 公益施設</a></div>
-          </div>
-          <div class="overview-row">
-            <div class="overview-label">住所</div>
-            <div class="overview-value">愛知県長久手市勝入塚１２１</div>
-          </div>
-          <div class="overview-row">
-            <div class="overview-label">対象</div>
-            <div class="overview-value">小学生・中学生</div>
-          </div>
-          <div class="overview-row overview-row--last">
-            <div class="overview-label">参加費</div>
-            <div class="overview-value">無料</div>
-          </div>
-
-          <div class="w-full mt-8">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.3605605182647!2d137.0487919!3d35.1725649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6003658b3cb45d2b%3A0x70251f10e4afeb16!2z44Oq44OL44Oi44OG44Op44K55YWs55uK5pa96Kit!5e0!3m2!1sja!2sjp!4v1763376064443!5m2!1sja!2sjp"
-              width="100%"
-              height="350"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              class="map-embed rounded-lg shadow-md"
-            ></iframe>
-            <p class="text-sm text-gray-500 mt-2 text-center">
-              リニモ「長久手古戦場駅」から徒歩数分 / イオンモール長久手のすぐ隣です
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>一人ひとりに合わせたサポート</h3>
+            <p>
+              子どもの学習ペースや理解度に合わせ，大学生がマンツーマンに近い形で丁寧にサポートします．
             </p>
-          </div>
+          </article>
+          <article class="feature-card">
+            <h3>大学生との楽しい学び</h3>
+            <p>
+              お兄さん・お姉さんのような存在として，勉強の楽しさや大切さを伝えます．
+            </p>
+          </article>
+          <article class="feature-card">
+            <h3>安心・安全な活動場所</h3>
+            <p>
+              長久手市社会福祉協議会に登録されている団体です．公共施設「リニモテラス」でオープンに活動しています．
+            </p>
+          </article>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="join" class="bg-white py-16 md:py-20">
-      <div class="container mx-auto text-center px-6">
-        <h2 class="section-title">参加方法</h2>
-        <div class="section-divider gradient"></div>
-        <p class="text-gray-800 text-lg lg:text-xl mb-12 max-w-2xl mx-auto">
+      <section id="overview" class="content-section content-section--dark">
+        <div class="section-heading">
+          <span>INFORMATION</span>
+          <h2>活動概要</h2>
+        </div>
+        <div class="overview-panel">
+          <dl class="overview-list">
+            <div>
+              <dt>日時</dt>
+              <dd>毎週火曜日 18:00〜20:00<small>（変更になる場合があります）</small></dd>
+            </div>
+            <div>
+              <dt>場所</dt>
+              <dd><a href="https://linimoterrace.jp/" target="_blank" rel="noopener noreferrer">リニモテラス 公益施設</a></dd>
+            </div>
+            <div>
+              <dt>住所</dt>
+              <dd>愛知県長久手市勝入塚１２１</dd>
+            </div>
+            <div>
+              <dt>対象</dt>
+              <dd>小学生・中学生・高校生（小学生未満要相談）</dd>
+            </div>
+            <div>
+              <dt>参加費</dt>
+              <dd>無料</dd>
+            </div>
+          </dl>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.3605605182647!2d137.0487919!3d35.1725649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6003658b3cb45d2b%3A0x70251f10e4afeb16!2z44Oq44OL44Oi44OG44Op44K55YWs55uK5pa96Kit!5e0!3m2!1sja!2sjp!4v1763376064443!5m2!1sja!2sjp"
+            width="100%"
+            height="350"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            class="map-embed"
+            title="リニモテラス 公益施設の地図"
+          ></iframe>
+          <p class="access-note">
+            リニモ「長久手古戦場駅」から徒歩数分 / イオンモール長久手のすぐ隣です
+          </p>
+        </div>
+      </section>
+
+      <section id="join" class="content-section">
+        <div class="section-heading">
+          <span>JOIN US</span>
+          <h2>参加方法</h2>
+        </div>
+        <p class="join-lead">
           参加のお申し込みやご質問は，公式LINEアカウントからお気軽にどうぞ！
         </p>
-
-        <div class="max-w-xl mx-auto">
-          <div class="join-panel">
-            <h3 class="text-2xl font-bold mb-6 text-center text-gray-900">参加は簡単2ステップ！</h3>
-            <ol class="space-y-6">
-              <li class="flex items-start">
-                <div class="step-number">1</div>
-                <div class="ml-4">
-                  <h4 class="font-bold text-lg text-gray-800">公式LINEを友だち追加</h4>
-                  <p class="text-gray-700">まずは下のボタンから公式LINEを友だち追加してください．</p>
-                </div>
-              </li>
-              <li class="flex items-start">
-                <div class="step-number">2</div>
-                <div class="ml-4">
-                  <h4 class="font-bold text-lg text-gray-800">メッセージを送信</h4>
-                  <p class="text-gray-700">初回参加希望のメッセージをお送りください．<br>担当者から折り返しご連絡します．</p>
-                </div>
-              </li>
-            </ol>
-          </div>
+        <div class="join-panel">
+          <h3>参加は簡単2ステップ！</h3>
+          <ol>
+            <li>
+              <span>1</span>
+              <div>
+                <h4>公式LINEを友だち追加</h4>
+                <p>まずは下のボタンから公式LINEを友だち追加してください．</p>
+              </div>
+            </li>
+            <li>
+              <span>2</span>
+              <div>
+                <h4>メッセージを送信</h4>
+                <p>初回参加希望のメッセージをお送りください．<br />担当者から折り返しご連絡します．</p>
+              </div>
+            </li>
+          </ol>
         </div>
+        <p class="join-action">
+          <a class="primary-button" href="https://lin.ee/r58ZBUA" target="_blank" rel="noopener noreferrer">公式LINEはこちら</a>
+        </p>
+      </section>
+    </main>
 
-        <a href="https://lin.ee/r58ZBUA" target="_blank" rel="noopener noreferrer" class="mx-auto lg:mx-0">
-          <button class="primary-button primary-button--gradient primary-button--large gradient my-10">
-            公式LINEはこちら
-          </button>
-        </a>
-      </div>
-    </section>
-    <footer class="bg-white">
-      <div class="container mx-auto px-8">
-        <div class="w-full flex flex-col lg:flex-row py-6">
-          <div class="flex-1 mb-6 text-black">
-            <a class="text-orange-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
-              あっぷすくーる
-            </a>
-          </div>
-          <div class="flex-1">
-            <p class="uppercase text-gray-500 md:mb-6">メニュー</p>
-            <ul class="list-reset mb-6">
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-500">トップ</a>
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#about" class="no-underline hover:underline text-gray-800 hover:text-orange-500">あっぷすくーるとは</a>
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#overview" class="no-underline hover:underline text-gray-800 hover:text-orange-500">活動概要</a>
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#join" class="no-underline hover:underline text-gray-800 hover:text-orange-500">参加方法</a>
-              </li>
-            </ul>
-          </div>
-          <div class="flex-1">
-            <p class="uppercase text-gray-500 md:mb-6">SNS</p>
-            <ul class="list-reset mb-6">
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="https://lin.ee/r58ZBUA" target="_blank" rel="noopener noreferrer" class="no-underline hover:underline text-gray-800 hover:text-orange-500">公式LINE</a>
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="https://www.instagram.com/apu_school/?hl=ja" target="_blank" rel="noopener noreferrer" class="no-underline hover:underline text-gray-800 hover:text-orange-500">Instagram</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
+    {% include site-footer.html %}
 
     <script src="js/site.js"></script>
   </body>
