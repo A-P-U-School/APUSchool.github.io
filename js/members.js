@@ -3,9 +3,9 @@ const cls = {
   card: "bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out h-full flex flex-col",
   img: "w-full h-56 object-cover object-center",
   body: "p-6 flex flex-col flex-grow",
-  name: "font-bold text-3xl text-gray-900 leading-tight whitespace-nowrap",
-  ruby: "text-sm text-gray-600 leading-relaxed whitespace-nowrap",
-  roman: "text-sm text-gray-500 leading-relaxed whitespace-nowrap"
+  name: "member-name font-bold text-3xl text-gray-900 leading-tight",
+  ruby: "member-meta text-sm text-gray-600 leading-relaxed",
+  roman: "member-meta text-sm text-gray-500 leading-relaxed"
 };
 
 function text(tag, className, value) {
@@ -40,14 +40,14 @@ function memberCard(member) {
   names.append(text("p", cls.roman, member.roman));
   body.appendChild(names);
 
-  body.append(text("p", "text-sm text-gray-600 mb-4", member.dept));
-  body.append(text("p", "text-gray-700 text-base flex-grow", member.message));
+  body.append(text("p", "text-sm text-gray-600 mb-4 member-text", member.dept));
+  body.append(text("p", "text-gray-700 text-base flex-grow member-text", member.message));
 
   if (member.certs) {
     const certs = document.createElement("div");
     certs.className = "mt-6 pt-4 border-t";
     certs.append(text("p", "text-xs text-gray-600 font-bold", "所持資格:"));
-    certs.append(text("p", "text-sm text-gray-800", member.certs));
+    certs.append(text("p", "text-sm text-gray-800 member-text", member.certs));
     body.appendChild(certs);
   }
 

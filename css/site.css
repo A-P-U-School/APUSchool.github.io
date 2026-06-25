@@ -2,6 +2,27 @@ body {
   font-family: "Source Sans Pro", sans-serif;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
 .gradient {
   background: linear-gradient(90deg, #fdba74 0%, #fb923c 100%);
 }
@@ -22,6 +43,16 @@ body {
 .nav-link:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.nav-brand {
+  line-height: 1.15;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.nav-menu {
+  border-radius: 0 0 0.5rem 0.5rem;
 }
 
 .hero-wave {
@@ -59,8 +90,11 @@ body {
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   display: inline-block;
   font-weight: 700;
+  max-width: 100%;
   padding: 1rem 2rem;
+  text-align: center;
   transition: transform 0.3s ease-in-out;
+  white-space: normal;
 }
 
 .primary-button:hover {
@@ -95,6 +129,7 @@ body {
   margin: 0.5rem 0;
   text-align: center;
   width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .section-divider {
@@ -187,6 +222,20 @@ body {
 
 .map-embed {
   border: 0;
+  display: block;
+  min-height: 260px;
+  width: 100%;
+}
+
+.member-name,
+.member-meta,
+.member-text {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.members-section {
+  min-height: calc(100vh - 12rem);
 }
 
 @media (min-width: 640px) {
@@ -196,6 +245,22 @@ body {
 
   .overview-value {
     width: 66.666667%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .nav-menu {
+    box-shadow: 0 14px 30px rgb(15 23 42 / 0.12);
+  }
+
+  .nav-menu li {
+    margin-right: 0;
+  }
+
+  .nav-menu .nav-link {
+    display: block;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }
 
@@ -212,5 +277,95 @@ body {
 
   .section-title {
     font-size: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-brand {
+    font-size: clamp(1.1rem, 6vw, 1.5rem);
+  }
+
+  .site-hero {
+    padding-top: 5.75rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 10vw, 2.5rem);
+  }
+
+  .hero-image {
+    border-radius: 0.75rem;
+  }
+
+  .hero-wave {
+    height: 54px;
+    margin-top: -1.5rem;
+  }
+
+  .hero-wave::before {
+    height: 36px;
+    top: 12px;
+  }
+
+  .hero-wave::after {
+    height: 48px;
+  }
+
+  .section-title {
+    font-size: clamp(1.85rem, 8vw, 2.25rem);
+  }
+
+  .section-divider {
+    margin-bottom: 1.75rem;
+    width: min(12rem, 68vw);
+  }
+
+  .feature-card__body,
+  .join-panel {
+    padding: 1.25rem;
+  }
+
+  .overview-panel {
+    padding: 1.25rem;
+  }
+
+  .overview-label,
+  .overview-value {
+    font-size: 1rem;
+  }
+
+  .primary-button {
+    padding: 0.875rem 1.5rem;
+  }
+
+  .primary-button--large {
+    font-size: 1.125rem;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+
+  .member-name {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 374px) {
+  .nav-brand img {
+    height: 1.75rem;
+    margin-right: 0.35rem;
+  }
+
+  .site-hero .container,
+  section .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .join-panel li {
+    align-items: flex-start;
   }
 }

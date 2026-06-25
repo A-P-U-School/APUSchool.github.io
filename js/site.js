@@ -11,11 +11,13 @@ function closeMenu(event) {
 
   if (onToggle) {
     nav.classList.toggle("hidden");
+    toggle.setAttribute("aria-expanded", String(!nav.classList.contains("hidden")));
     return;
   }
 
   if (!inMenu) {
     nav.classList.add("hidden");
+    toggle.setAttribute("aria-expanded", "false");
   }
 }
 
