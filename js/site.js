@@ -22,3 +22,26 @@ function closeMenu(event) {
 }
 
 document.addEventListener("click", closeMenu);
+
+const heroSlides = document.querySelectorAll(".cover-slide");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (heroSlides.length > 1 && !prefersReducedMotion) {
+  let activeSlideIndex = 0;
+
+  function getRandomSlideIndex() {
+    let nextSlideIndex = activeSlideIndex;
+
+    while (nextSlideIndex === activeSlideIndex) {
+      nextSlideIndex = Math.floor(Math.random() * heroSlides.length);
+    }
+
+    return nextSlideIndex;
+  }
+
+  window.setInterval(() => {
+    heroSlides[activeSlideIndex].classList.remove("is-active");
+    activeSlideIndex = getRandomSlideIndex();
+    heroSlides[activeSlideIndex].classList.add("is-active");
+  }, 3500);
+}
