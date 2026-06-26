@@ -148,17 +148,49 @@ a {
 
 .cover {
   align-items: flex-end;
-  background:
-    linear-gradient(90deg, rgb(0 0 0 / 0.82) 0%, rgb(0 0 0 / 0.56) 42%, rgb(249 115 22 / 0.1) 100%),
-    var(--hero-image) center / cover;
+  background: var(--color-black);
   display: flex;
+  isolation: isolate;
   min-height: clamp(28rem, 62vw, 42rem);
+  overflow: hidden;
   padding: 2rem max(1.25rem, calc((100vw - var(--content-width)) / 2));
+  position: relative;
+}
+
+.cover::before {
+  background: linear-gradient(90deg, rgb(0 0 0 / 0.82) 0%, rgb(0 0 0 / 0.56) 42%, rgb(249 115 22 / 0.1) 100%);
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.cover-slideshow {
+  inset: 0;
+  position: absolute;
+  z-index: 0;
+}
+
+.cover-slide {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 1.2s ease;
+  width: 100%;
+}
+
+.cover-slide.is-active {
+  opacity: 1;
 }
 
 .cover-overlay {
   max-width: var(--content-width);
   padding: 0 0 4.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .cover-kicker {
