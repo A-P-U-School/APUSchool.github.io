@@ -559,19 +559,34 @@ a {
 .members-hero {
   align-items: center;
   background:
-    linear-gradient(100deg, rgb(0 0 0 / 0.9), rgb(0 0 0 / 0.64) 60%, rgb(249 115 22 / 0.7)),
-    var(--hero-image) center / cover;
-  color: var(--color-paper);
+    linear-gradient(135deg, #fff7ed 0%, #fffaf5 42%, var(--color-bg) 100%);
+  border-bottom: 1px solid #e9e3dc;
+  color: var(--color-black);
   display: flex;
-  min-height: 25rem;
+  min-height: 16rem;
+  overflow: hidden;
   padding: 4rem max(1.25rem, calc((100vw - var(--content-width)) / 2));
+  position: relative;
+}
+
+.members-hero::after {
+  background: linear-gradient(90deg, var(--color-main), var(--color-main-light));
+  bottom: 0;
+  content: "";
+  height: 0.45rem;
+  left: 0;
+  position: absolute;
+  width: 100%;
 }
 
 .members-hero > div {
+  border-left: 6px solid var(--color-main);
   max-width: 760px;
+  padding-left: clamp(1.2rem, 3vw, 2rem);
+  position: relative;
+  z-index: 1;
 }
 
-.members-hero p:first-child,
 .members-join-label {
   color: var(--color-main-light);
   font-size: 0.9rem;
@@ -588,7 +603,7 @@ a {
 }
 
 .members-hero .members-hero-lead {
-  color: rgb(255 255 255 / 0.9);
+  color: var(--color-muted);
   font-size: clamp(1rem, 2vw, 1.2rem);
   font-weight: 700;
   line-height: 1.9;
@@ -762,6 +777,158 @@ a {
 }
 
 .members-join .primary-button {
+  flex: 0 0 auto;
+}
+
+.voices-page {
+  background: var(--color-bg);
+}
+
+.voices-hero {
+  align-items: center;
+  background:
+    linear-gradient(135deg, #fff7ed 0%, #fffaf5 42%, var(--color-bg) 100%);
+  border-bottom: 1px solid #e9e3dc;
+  color: var(--color-black);
+  display: flex;
+  min-height: 16rem;
+  overflow: hidden;
+  padding: 4rem max(1.25rem, calc((100vw - var(--content-width)) / 2));
+  position: relative;
+}
+
+.voices-hero::after {
+  background: linear-gradient(90deg, var(--color-main), var(--color-main-light));
+  bottom: 0;
+  content: "";
+  height: 0.45rem;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.voices-hero > div {
+  border-left: 6px solid var(--color-main);
+  max-width: 760px;
+  padding-left: clamp(1.2rem, 3vw, 2rem);
+  position: relative;
+  z-index: 1;
+}
+
+.voices-cta-label {
+  color: var(--color-main-light);
+  font-size: 0.9rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  margin: 0 0 0.5rem;
+}
+
+.voices-hero h2 {
+  font-size: clamp(2.7rem, 7vw, 5rem);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.voices-hero .voices-hero-lead {
+  color: var(--color-muted);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 700;
+  line-height: 1.9;
+  margin: 1.2rem 0 0;
+  max-width: 680px;
+}
+
+.voices-section {
+  margin: 0 auto;
+  max-width: var(--content-width);
+  padding: 4.5rem 1rem;
+}
+
+.voices-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.voice-card {
+  background: var(--color-paper);
+  border-radius: 1rem;
+  box-shadow: 0 16px 32px rgb(0 0 0 / 0.12);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 1.6rem;
+}
+
+.voice-card--accent {
+  background: var(--color-black);
+  color: var(--color-paper);
+}
+
+.voice-category {
+  color: var(--color-main-dark);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+  margin: 0 0 1rem;
+}
+
+.voice-card--accent .voice-category {
+  color: var(--color-main-light);
+}
+
+.voice-card blockquote {
+  color: var(--color-black);
+  flex-grow: 1;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.voice-card--accent blockquote {
+  color: var(--color-paper);
+}
+
+.voice-author {
+  border-top: 1px solid #e9e3dc;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin: 1.4rem 0 0;
+  padding-top: 1rem;
+}
+
+.voice-card--accent .voice-author {
+  border-top-color: rgb(255 255 255 / 0.2);
+  color: rgb(255 255 255 / 0.74);
+}
+
+.voices-cta {
+  align-items: center;
+  background: var(--color-main);
+  color: var(--color-paper);
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  margin: 0 auto 4.5rem;
+  max-width: var(--content-width);
+  padding: 2.5rem;
+}
+
+.voices-cta h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.voices-cta p:not(.voices-cta-label) {
+  margin: 0.6rem 0 0;
+}
+
+.voices-cta .primary-button {
   flex: 0 0 auto;
 }
 
@@ -1334,23 +1501,9 @@ a {
   width: min(16rem, 68vw);
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1320px) {
   .site-header {
     flex-wrap: nowrap;
-  }
-
-  .nav-menu {
-    box-shadow: 0 14px 30px rgb(15 23 42 / 0.12);
-  }
-
-  .nav-menu li {
-    margin-right: 0;
-  }
-
-  .nav-menu .nav-link {
-    display: block;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
   }
 
   .menu-toggle {
@@ -1379,6 +1532,22 @@ a {
   .site-header-nav.hidden {
     display: none;
   }
+}
+
+@media (max-width: 1180px) {
+  .nav-menu {
+    box-shadow: 0 14px 30px rgb(15 23 42 / 0.12);
+  }
+
+  .nav-menu li {
+    margin-right: 0;
+  }
+
+  .nav-menu .nav-link {
+    display: block;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 
   .feature-grid {
     grid-template-columns: 1fr;
@@ -1388,12 +1557,16 @@ a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .voices-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .terakoya-opening h2 {
     font-size: clamp(3.5rem, 8vw, 6rem);
   }
 }
 
-@media (min-width: 1181px) {
+@media (min-width: 1321px) {
   .site-header-nav.hidden {
     display: flex;
   }
@@ -1470,7 +1643,7 @@ a {
   }
 
   .members-hero {
-    min-height: 22rem;
+    min-height: 13rem;
     padding-bottom: 3rem;
     padding-top: 3rem;
   }
@@ -1485,6 +1658,28 @@ a {
   }
 
   .members-join {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 0;
+    padding: 2rem 1.25rem;
+  }
+
+  .voices-hero {
+    min-height: 13rem;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+  }
+
+  .voices-section {
+    padding-bottom: 3.5rem;
+    padding-top: 3.5rem;
+  }
+
+  .voices-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .voices-cta {
     align-items: flex-start;
     flex-direction: column;
     margin-bottom: 0;
