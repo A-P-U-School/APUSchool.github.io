@@ -68,7 +68,7 @@ function soonCard() {
       <div class="member-card-body member-soon-body">
         <h3>Coming Soon...</h3>
         <p>
-          大学1年生から大学院生まで，80名を超えるメンバーが学習のサポートをさせていただきます！
+          運営メンバー以外にも大学1年生から大学院生まで，80名を超えるメンバーが学習のサポートをさせていただきます！
         </p>
       </div>
     </div>
