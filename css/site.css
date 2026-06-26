@@ -82,9 +82,9 @@ a {
 .site-header img {
   background: var(--color-paper);
   border-radius: 50%;
-  height: 44px;
-  padding: 4px;
-  width: 44px;
+  height: 48px;
+  padding: 0;
+  width: 48px;
 }
 
 .menu-toggle {
@@ -733,6 +733,523 @@ a {
   flex: 0 0 auto;
 }
 
+.terakoya-page {
+  --terakoya-cream: #fff9f0;
+  --terakoya-peach: #fde6cf;
+  --terakoya-soft-orange: #f8b77c;
+  --terakoya-brown: #5a4030;
+  background: var(--terakoya-cream);
+  color: var(--terakoya-brown);
+}
+
+.terakoya-opening {
+  background: #2a180e;
+  display: flex;
+  isolation: isolate;
+  min-height: min(44rem, calc(100svh - 5.5rem));
+  overflow: hidden;
+  padding: clamp(4rem, 9vw, 7rem) max(1.25rem, calc((100vw - 1080px) / 2));
+  position: relative;
+}
+
+.terakoya-opening::before {
+  background: linear-gradient(90deg, rgb(42 24 14 / 0.88) 0%, rgb(42 24 14 / 0.7) 45%, rgb(42 24 14 / 0.18) 100%);
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.terakoya-opening-image {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+
+.terakoya-opening-copy {
+  align-self: center;
+  max-width: 44rem;
+  padding: 0 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.terakoya-eyebrow,
+.terakoya-index {
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  margin: 0;
+}
+
+.terakoya-eyebrow {
+  background: rgb(253 230 207 / 0.92);
+  border-radius: 999px;
+  color: var(--terakoya-brown);
+  display: inline-block;
+  letter-spacing: 0.08em;
+  padding: 0.4rem 1rem;
+}
+
+.terakoya-opening h2 {
+  color: var(--color-paper);
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  letter-spacing: 0;
+  line-height: 0.95;
+  margin: clamp(1.8rem, 4vw, 3rem) 0;
+  text-shadow: 0 5px 28px rgb(0 0 0 / 0.28);
+}
+
+.terakoya-opening h2 span {
+  display: block;
+  white-space: nowrap;
+}
+
+.terakoya-opening h2 span:first-child {
+  color: var(--terakoya-peach);
+  font-size: 0.48em;
+  letter-spacing: 0;
+  margin-bottom: 0.45em;
+}
+
+.terakoya-opening-lead {
+  border-left: 3px solid var(--terakoya-peach);
+  color: rgb(255 255 255 / 0.94);
+  font-size: clamp(1rem, 2vw, 1.12rem);
+  font-weight: 700;
+  line-height: 1.9;
+  margin: 0;
+  max-width: 36rem;
+  padding-left: 1.25rem;
+}
+
+.terakoya-scroll-link {
+  align-items: center;
+  background: transparent;
+  bottom: 1.5rem;
+  color: var(--color-paper);
+  display: flex;
+  font-size: 0.9rem;
+  font-weight: 900;
+  gap: 2rem;
+  padding: 0.6rem 0;
+  position: absolute;
+  right: 0;
+  text-decoration: none;
+  z-index: 3;
+}
+
+.terakoya-scroll-link span:last-child {
+  color: var(--terakoya-peach);
+  font-size: 1.2rem;
+}
+
+.terakoya-marquee {
+  background: var(--terakoya-peach);
+  color: var(--terakoya-brown);
+  overflow: hidden;
+  padding: 0.8rem 0;
+  white-space: nowrap;
+}
+
+.terakoya-marquee p {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  margin: 0;
+  text-align: center;
+}
+
+.terakoya-marquee span {
+  color: var(--color-main-dark);
+  font-size: 1em;
+  vertical-align: middle;
+}
+
+.terakoya-statement {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 10rem minmax(0, 1fr);
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: clamp(5rem, 10vw, 8rem) clamp(1.25rem, 5vw, 4rem);
+}
+
+.terakoya-statement h2,
+.terakoya-collaboration h2 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  letter-spacing: -0.04em;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.terakoya-statement h2 em {
+  color: var(--color-main);
+  font-style: normal;
+}
+
+.terakoya-statement div > p {
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  margin: 3rem 0 0 auto;
+  max-width: 44rem;
+}
+
+.terakoya-actions {
+  gap: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 0 1.25rem clamp(5rem, 10vw, 8rem);
+}
+
+.terakoya-actions article {
+  background: rgb(255 255 255 / 0.72);
+  border: 1px solid #ead8c7;
+  border-radius: 45% 45% 1.5rem 1.5rem;
+  min-height: 21rem;
+  padding: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+}
+
+.terakoya-actions article + article {
+  border-left: 1px solid #ead8c7;
+}
+
+.terakoya-actions article:nth-child(2) {
+  background: #fff0df;
+}
+
+.terakoya-actions span {
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.terakoya-actions h3 {
+  color: var(--color-main-dark);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin: 2.5rem 0 1.5rem;
+}
+
+.terakoya-actions p {
+  color: var(--color-muted);
+  font-weight: 500;
+  margin: 0;
+}
+
+.terakoya-ticket {
+  background: #fffaf3;
+  color: var(--terakoya-brown);
+  padding: clamp(4rem, 8vw, 6.5rem) max(1.25rem, calc((100vw - 1000px) / 2));
+}
+
+.terakoya-ticket-heading {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 2rem;
+  max-width: 900px;
+}
+
+.terakoya-ticket-heading p {
+  color: var(--color-main-dark);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  margin: 0;
+}
+
+.terakoya-ticket-heading h2 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: 0;
+  line-height: 1.2;
+  margin: 0;
+  text-align: right;
+}
+
+.terakoya-ticket-details {
+  background: #fffdf9;
+  color: var(--terakoya-brown);
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  border: 1px solid #ead8c7;
+  border-radius: 0.8rem;
+  box-shadow: 0 12px 30px rgb(90 64 48 / 0.08);
+  margin: 0 auto;
+  max-width: 900px;
+  overflow: hidden;
+}
+
+.terakoya-ticket-main {
+  align-items: center;
+  background: #fff7ed;
+  border-right: 1px solid #ead8c7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 15rem;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.terakoya-ticket-label {
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  margin: 0;
+}
+
+.terakoya-ticket-date {
+  color: var(--color-main-dark);
+  font-size: clamp(3rem, 8vw, 4.6rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1;
+  margin: 0.8rem 0 0;
+}
+
+.terakoya-ticket-date span {
+  color: var(--terakoya-brown);
+  display: block;
+  font-size: 0.38em;
+  letter-spacing: 0;
+  margin-top: 0.45em;
+}
+
+.terakoya-ticket-details dl {
+  margin: 0;
+  padding: 2rem 2.5rem;
+}
+
+.terakoya-ticket-details dl div {
+  align-items: baseline;
+  border-bottom: 1px solid #ead8c7;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.85rem 0;
+}
+
+.terakoya-ticket-details dl div:first-child {
+  padding-top: 0;
+}
+
+.terakoya-ticket-details dl div:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.terakoya-ticket-details dt {
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.terakoya-ticket-details dd {
+  font-size: 1.15rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+.terakoya-place {
+  border-top: 1px solid #ead8c7;
+  grid-column: 1 / -1;
+  padding: 1.5rem 2.5rem 2rem;
+}
+
+.terakoya-place > p:first-child {
+  color: var(--color-main-dark);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  margin: 0;
+}
+
+.terakoya-place h3 {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  line-height: 1.3;
+  margin: 0.2rem 0 0;
+}
+
+.terakoya-place > p:last-child {
+  margin: 0.3rem 0 0;
+}
+
+.terakoya-ticket-cta {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  margin: 1rem auto 0;
+  max-width: 900px;
+  text-align: right;
+}
+
+.terakoya-ticket-cta p,
+.terakoya-ticket-cta small {
+  margin: 0;
+}
+
+.terakoya-ticket-cta small {
+  color: var(--color-muted);
+}
+
+.terakoya-ticket-cta a {
+  align-items: center;
+  background: var(--color-main-dark);
+  border-radius: 999px;
+  color: var(--color-paper);
+  display: flex;
+  flex: 0 0 auto;
+  font-size: 1.1rem;
+  font-weight: 900;
+  gap: 3rem;
+  padding: 1.2rem 1.5rem;
+  text-decoration: none;
+}
+
+.terakoya-ticket-cta a span:last-child {
+  font-size: 1.6rem;
+}
+
+.terakoya-collaboration {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: clamp(5rem, 11vw, 10rem) clamp(1.25rem, 5vw, 4rem);
+}
+
+.terakoya-collaboration-heading {
+  margin: 0 auto clamp(3rem, 7vw, 5rem);
+  max-width: 760px;
+  text-align: center;
+}
+
+.terakoya-collaboration-heading .terakoya-index {
+  margin-bottom: 2rem;
+}
+
+.terakoya-roster {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: 1040px;
+}
+
+.terakoya-roster article {
+  min-width: 0;
+  text-align: center;
+}
+
+.terakoya-group-icon {
+  align-items: center;
+  aspect-ratio: 1;
+  background: #fff7ed;
+  border: 8px solid var(--terakoya-peach);
+  border-radius: 50%;
+  box-shadow: 0 14px 30px rgb(90 64 48 / 0.1);
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  max-width: 250px;
+  overflow: hidden;
+  padding: 0.35rem;
+  width: 100%;
+}
+
+.terakoya-group-icon img {
+  display: block;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(1.12);
+  width: 100%;
+}
+
+.terakoya-roster p {
+  color: var(--color-main-dark);
+  font-size: 0.75rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+.terakoya-roster h3 {
+  font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+  line-height: 1.3;
+  margin: 0.35rem 0;
+}
+
+.terakoya-roster span {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.terakoya-instagram,
+.terakoya-group-link,
+.terakoya-homepage {
+  align-items: center;
+  background: var(--terakoya-peach);
+  border-radius: 50%;
+  color: var(--color-main-dark);
+  display: flex;
+  height: 2.7rem;
+  justify-content: center;
+  margin: 1.1rem auto 0;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  width: 2.7rem;
+}
+
+.terakoya-link-list {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1.1rem;
+}
+
+.terakoya-link-list .terakoya-instagram,
+.terakoya-link-list .terakoya-group-link,
+.terakoya-link-list .terakoya-homepage {
+  margin: 0;
+}
+
+.terakoya-instagram:hover,
+.terakoya-instagram:focus-visible,
+.terakoya-group-link:hover,
+.terakoya-group-link:focus-visible,
+.terakoya-homepage:hover,
+.terakoya-homepage:focus-visible {
+  background: var(--color-main-dark);
+  color: var(--color-paper);
+  transform: translateY(-2px);
+}
+
+.terakoya-instagram svg,
+.terakoya-group-link svg,
+.terakoya-homepage svg {
+  fill: none;
+  height: 1.35rem;
+  stroke: currentcolor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  width: 1.35rem;
+}
+
+.terakoya-instagram .terakoya-instagram-dot {
+  fill: currentcolor;
+  stroke: none;
+}
+
+.terakoya-credit {
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  margin: 3rem 0 0;
+  text-align: center;
+}
+
 /* Compatibility styles for the existing members page. */
 .gradient {
   background: linear-gradient(90deg, #fdba74 0%, #fb923c 100%);
@@ -785,7 +1302,7 @@ a {
   width: min(16rem, 68vw);
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1180px) {
   .site-header {
     flex-wrap: nowrap;
   }
@@ -838,9 +1355,13 @@ a {
   .members-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .terakoya-opening h2 {
+    font-size: clamp(3.5rem, 8vw, 6rem);
+  }
 }
 
-@media (min-width: 1101px) {
+@media (min-width: 1181px) {
   .site-header-nav.hidden {
     display: flex;
   }
@@ -856,8 +1377,8 @@ a {
   }
 
   .site-header img {
-    height: 38px;
-    width: 38px;
+    height: 42px;
+    width: 42px;
   }
 
   .cover {
@@ -936,6 +1457,120 @@ a {
     flex-direction: column;
     margin-bottom: 0;
     padding: 2rem 1.25rem;
+  }
+
+  .terakoya-opening {
+    min-height: min(42rem, calc(100svh - 4.75rem));
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+  }
+
+  .terakoya-opening-image {
+    object-position: 58% center;
+  }
+
+  .terakoya-opening-copy {
+    padding-bottom: 0;
+  }
+
+  .terakoya-opening h2 {
+    font-size: clamp(3.6rem, 18vw, 5.5rem);
+  }
+
+  .terakoya-scroll-link {
+    display: none;
+  }
+
+  .terakoya-marquee p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .terakoya-statement {
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .terakoya-statement div > p {
+    margin-top: 2rem;
+  }
+
+  .terakoya-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .terakoya-actions article {
+    min-height: auto;
+    padding: 2.5rem 1.25rem;
+  }
+
+  .terakoya-actions article + article {
+    border-left: 0;
+    border-top: 1px solid #ead8c7;
+  }
+
+  .terakoya-actions h3 {
+    margin: 1.5rem 0 1rem;
+    writing-mode: horizontal-tb;
+  }
+
+  .terakoya-ticket-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .terakoya-ticket-heading h2 {
+    text-align: left;
+  }
+
+  .terakoya-ticket-details {
+    grid-template-columns: 1fr;
+  }
+
+  .terakoya-ticket-main {
+    border-bottom: 1px solid #ead8c7;
+    border-right: 0;
+    min-height: auto;
+    padding: 2rem 1.25rem;
+  }
+
+  .terakoya-ticket-date {
+    font-size: clamp(3.5rem, 16vw, 4.6rem);
+  }
+
+  .terakoya-ticket-details dl {
+    padding: 1.5rem 1.25rem 0;
+  }
+
+  .terakoya-ticket-details dd {
+    font-size: 1.1rem;
+  }
+
+  .terakoya-place {
+    grid-column: auto;
+    padding: 1.5rem 1.25rem 2rem;
+  }
+
+  .terakoya-ticket-cta {
+    text-align: left;
+  }
+
+  .terakoya-collaboration {
+    gap: 3rem;
+    grid-template-columns: 1fr;
+  }
+
+  .terakoya-roster {
+    grid-template-columns: 1fr;
+  }
+
+  .terakoya-group-icon {
+    max-width: 200px;
+  }
+
+  .terakoya-credit {
+    margin-top: 2.5rem;
   }
 }
 
