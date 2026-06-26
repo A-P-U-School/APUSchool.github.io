@@ -1,3 +1,7 @@
+/* ==========================================================================
+   Design Tokens
+   ========================================================================== */
+
 :root {
   --color-main: #f97316;
   --color-main-dark: #c2410c;
@@ -9,6 +13,10 @@
   --content-width: 1000px;
   --font-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Noto Sans JP", "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
 }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
 
 *,
 *::before,
@@ -44,6 +52,10 @@ a {
 .hidden {
   display: none;
 }
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
 
 .site-header {
   align-items: center;
@@ -141,6 +153,14 @@ a {
   background: var(--color-black);
   color: var(--color-paper);
 }
+
+.site-header-nav .current {
+  background: rgb(255 255 255 / 0.2);
+}
+
+/* ==========================================================================
+   Home Page
+   ========================================================================== */
 
 .home {
   min-height: calc(100vh - 76px);
@@ -496,6 +516,10 @@ a {
   transform: translateY(-2px);
 }
 
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
 .site-footer {
   background: var(--color-black);
   color: rgb(255 255 255 / 0.82);
@@ -537,26 +561,17 @@ a {
   text-decoration: underline;
 }
 
-.member-name,
-.member-meta,
-.member-text {
-  overflow-wrap: anywhere;
-  word-break: normal;
-}
+/* ==========================================================================
+   Shared Subpage Layout
+   ========================================================================== */
 
-.members-section {
-  min-height: calc(100vh - 12rem);
-}
-
-.site-header-nav .current {
-  background: rgb(255 255 255 / 0.2);
-}
-
-.members-page {
+.members-page,
+.voices-page {
   background: var(--color-bg);
 }
 
-.members-hero {
+.members-hero,
+.voices-hero {
   align-items: center;
   background:
     linear-gradient(135deg, #fff7ed 0%, #fffaf5 42%, var(--color-bg) 100%);
@@ -569,7 +584,8 @@ a {
   position: relative;
 }
 
-.members-hero::after {
+.members-hero::after,
+.voices-hero::after {
   background: linear-gradient(90deg, var(--color-main), var(--color-main-light));
   bottom: 0;
   content: "";
@@ -579,7 +595,8 @@ a {
   width: 100%;
 }
 
-.members-hero > div {
+.members-hero > div,
+.voices-hero > div {
   border-left: 6px solid var(--color-main);
   max-width: 760px;
   padding-left: clamp(1.2rem, 3vw, 2rem);
@@ -587,7 +604,8 @@ a {
   z-index: 1;
 }
 
-.members-join-label {
+.members-join-label,
+.voices-cta-label {
   color: var(--color-main-light);
   font-size: 0.9rem;
   font-weight: 900;
@@ -595,14 +613,16 @@ a {
   margin: 0 0 0.5rem;
 }
 
-.members-hero h2 {
+.members-hero h2,
+.voices-hero h2 {
   font-size: clamp(2.7rem, 7vw, 5rem);
   letter-spacing: -0.04em;
   line-height: 1.1;
   margin: 0;
 }
 
-.members-hero .members-hero-lead {
+.members-hero .members-hero-lead,
+.voices-hero .voices-hero-lead {
   color: var(--color-muted);
   font-size: clamp(1rem, 2vw, 1.2rem);
   font-weight: 700;
@@ -611,10 +631,56 @@ a {
   max-width: 680px;
 }
 
-.members-section {
+.members-section,
+.voices-section {
   margin: 0 auto;
   max-width: var(--content-width);
   padding: 4.5rem 1rem;
+}
+
+.members-join,
+.voices-cta {
+  align-items: center;
+  background: var(--color-main);
+  color: var(--color-paper);
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  margin: 0 auto 4.5rem;
+  max-width: var(--content-width);
+  padding: 2.5rem;
+}
+
+.members-join h2,
+.voices-cta h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.members-join p:not(.members-join-label),
+.voices-cta p:not(.voices-cta-label) {
+  margin: 0.6rem 0 0;
+}
+
+.members-join .primary-button,
+.voices-cta .primary-button {
+  flex: 0 0 auto;
+}
+
+/* ==========================================================================
+   Members Page
+   ========================================================================== */
+
+.member-name,
+.member-meta,
+.member-text {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.members-section {
+  min-height: calc(100vh - 12rem);
 }
 
 .members-grid {
@@ -754,96 +820,9 @@ a {
   margin: 0;
 }
 
-.members-join {
-  align-items: center;
-  background: var(--color-main);
-  color: var(--color-paper);
-  display: flex;
-  gap: 2rem;
-  justify-content: space-between;
-  margin: 0 auto 4.5rem;
-  max-width: var(--content-width);
-  padding: 2.5rem;
-}
-
-.members-join h2 {
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  line-height: 1.2;
-  margin: 0;
-}
-
-.members-join p:not(.members-join-label) {
-  margin: 0.6rem 0 0;
-}
-
-.members-join .primary-button {
-  flex: 0 0 auto;
-}
-
-.voices-page {
-  background: var(--color-bg);
-}
-
-.voices-hero {
-  align-items: center;
-  background:
-    linear-gradient(135deg, #fff7ed 0%, #fffaf5 42%, var(--color-bg) 100%);
-  border-bottom: 1px solid #e9e3dc;
-  color: var(--color-black);
-  display: flex;
-  min-height: 16rem;
-  overflow: hidden;
-  padding: 4rem max(1.25rem, calc((100vw - var(--content-width)) / 2));
-  position: relative;
-}
-
-.voices-hero::after {
-  background: linear-gradient(90deg, var(--color-main), var(--color-main-light));
-  bottom: 0;
-  content: "";
-  height: 0.45rem;
-  left: 0;
-  position: absolute;
-  width: 100%;
-}
-
-.voices-hero > div {
-  border-left: 6px solid var(--color-main);
-  max-width: 760px;
-  padding-left: clamp(1.2rem, 3vw, 2rem);
-  position: relative;
-  z-index: 1;
-}
-
-.voices-cta-label {
-  color: var(--color-main-light);
-  font-size: 0.9rem;
-  font-weight: 900;
-  letter-spacing: 0.16em;
-  margin: 0 0 0.5rem;
-}
-
-.voices-hero h2 {
-  font-size: clamp(2.7rem, 7vw, 5rem);
-  letter-spacing: -0.04em;
-  line-height: 1.1;
-  margin: 0;
-}
-
-.voices-hero .voices-hero-lead {
-  color: var(--color-muted);
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  font-weight: 700;
-  line-height: 1.9;
-  margin: 1.2rem 0 0;
-  max-width: 680px;
-}
-
-.voices-section {
-  margin: 0 auto;
-  max-width: var(--content-width);
-  padding: 4.5rem 1rem;
-}
+/* ==========================================================================
+   Voices Page
+   ========================================================================== */
 
 .voices-grid {
   display: grid;
@@ -906,31 +885,9 @@ a {
   color: rgb(255 255 255 / 0.74);
 }
 
-.voices-cta {
-  align-items: center;
-  background: var(--color-main);
-  color: var(--color-paper);
-  display: flex;
-  gap: 2rem;
-  justify-content: space-between;
-  margin: 0 auto 4.5rem;
-  max-width: var(--content-width);
-  padding: 2.5rem;
-}
-
-.voices-cta h2 {
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  line-height: 1.2;
-  margin: 0;
-}
-
-.voices-cta p:not(.voices-cta-label) {
-  margin: 0.6rem 0 0;
-}
-
-.voices-cta .primary-button {
-  flex: 0 0 auto;
-}
+/* ==========================================================================
+   Terakoya Page
+   ========================================================================== */
 
 .terakoya-page {
   --terakoya-cream: #fff9f0;
@@ -1449,7 +1406,10 @@ a {
   text-align: center;
 }
 
-/* Compatibility styles for the existing members page. */
+/* ==========================================================================
+   Legacy Compatibility
+   ========================================================================== */
+
 .gradient {
   background: linear-gradient(90deg, #fdba74 0%, #fb923c 100%);
 }
@@ -1500,6 +1460,10 @@ a {
   opacity: 0.35;
   width: min(16rem, 68vw);
 }
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
 
 @media (max-width: 1320px) {
   .site-header {
@@ -1642,43 +1606,25 @@ a {
     justify-content: flex-start;
   }
 
-  .members-hero {
-    min-height: 13rem;
-    padding-bottom: 3rem;
-    padding-top: 3rem;
-  }
-
-  .members-section {
-    padding-bottom: 3.5rem;
-    padding-top: 3.5rem;
-  }
-
-  .members-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .members-join {
-    align-items: flex-start;
-    flex-direction: column;
-    margin-bottom: 0;
-    padding: 2rem 1.25rem;
-  }
-
+  .members-hero,
   .voices-hero {
     min-height: 13rem;
     padding-bottom: 3rem;
     padding-top: 3rem;
   }
 
+  .members-section,
   .voices-section {
     padding-bottom: 3.5rem;
     padding-top: 3.5rem;
   }
 
+  .members-grid,
   .voices-grid {
     grid-template-columns: 1fr;
   }
 
+  .members-join,
   .voices-cta {
     align-items: flex-start;
     flex-direction: column;
