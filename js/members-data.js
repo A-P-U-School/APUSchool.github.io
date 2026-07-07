@@ -65,5 +65,14 @@ window.memberData = [
     photo: "img/member/chihiro.png",
     alt: "甲斐千尋のプロフィール写真",
     message: "ただ勉強ができる場所ではなく，安心できる居場所にもなれるよう意識しています．"
+  },
+  {
+    name: "西山 芽衣菜",
+    kana: "にしやま めいな",
+    roman: "Nishiyama Meina",
+    dept: "社会福祉学科3年",
+    photo: "img/member/meina.jpeg",
+    alt: "西山芽衣菜のプロフィール写真",
+    message: "みんなが安心して楽しく学び，自分らしく過ごせる場所作ってます！"
   }
 ];
