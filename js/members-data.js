@@ -11,6 +11,15 @@ window.memberData = [
     certs: "英検5級，大型・大型特殊・牽引自動車第二種免許"
   },
   {
+    name: "野地 天心",
+    kana: "のじ てんしん",
+    roman: "Noji Tenshin",
+    dept: "情報科学研究科修士1年",
+    photo: "img/member/tenshin.png",
+    alt: "野地天心のプロフィール写真",
+    message: "一緒に楽しみましょう！"
+  },
+  {
     name: "塩見 雄真",
     kana: "しおみ ゆうま",
     roman: "Shiomi Yuuma",
