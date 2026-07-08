@@ -566,12 +566,14 @@ a {
    ========================================================================== */
 
 .members-page,
-.voices-page {
+.voices-page,
+.history-page {
   background: var(--color-bg);
 }
 
 .members-hero,
-.voices-hero {
+.voices-hero,
+.history-hero {
   align-items: center;
   background:
     linear-gradient(135deg, #fff7ed 0%, #fffaf5 42%, var(--color-bg) 100%);
@@ -585,7 +587,8 @@ a {
 }
 
 .members-hero::after,
-.voices-hero::after {
+.voices-hero::after,
+.history-hero::after {
   background: linear-gradient(90deg, var(--color-main), var(--color-main-light));
   bottom: 0;
   content: "";
@@ -596,7 +599,8 @@ a {
 }
 
 .members-hero > div,
-.voices-hero > div {
+.voices-hero > div,
+.history-hero > div {
   border-left: 6px solid var(--color-main);
   max-width: 760px;
   padding-left: clamp(1.2rem, 3vw, 2rem);
@@ -614,7 +618,8 @@ a {
 }
 
 .members-hero h2,
-.voices-hero h2 {
+.voices-hero h2,
+.history-hero h2 {
   font-size: clamp(2.7rem, 7vw, 5rem);
   letter-spacing: -0.04em;
   line-height: 1.1;
@@ -622,7 +627,8 @@ a {
 }
 
 .members-hero .members-hero-lead,
-.voices-hero .voices-hero-lead {
+.voices-hero .voices-hero-lead,
+.history-hero .history-hero-lead {
   color: var(--color-muted);
   font-size: clamp(1rem, 2vw, 1.2rem);
   font-weight: 700;
@@ -632,7 +638,8 @@ a {
 }
 
 .members-section,
-.voices-section {
+.voices-section,
+.history-section {
   margin: 0 auto;
   max-width: var(--content-width);
   padding: 4.5rem 1rem;
@@ -877,6 +884,119 @@ a {
 .voice-card--accent .voice-author {
   border-top-color: rgb(255 255 255 / 0.2);
   color: rgb(255 255 255 / 0.74);
+}
+
+/* ==========================================================================
+   History Page
+   ========================================================================== */
+
+.history-section--records {
+  padding-top: 0;
+}
+
+.history-timeline {
+  display: grid;
+  gap: 1.25rem;
+  position: relative;
+}
+
+.history-timeline::before {
+  background: #e2d9cf;
+  bottom: 1.5rem;
+  content: "";
+  left: 7.35rem;
+  position: absolute;
+  top: 1.5rem;
+  width: 3px;
+}
+
+.history-timeline-item {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 6rem minmax(0, 1fr);
+  position: relative;
+}
+
+.history-timeline-item::before {
+  background: var(--color-main);
+  border: 5px solid var(--color-bg);
+  border-radius: 999px;
+  content: "";
+  height: 1rem;
+  left: 6.72rem;
+  position: absolute;
+  top: 1.55rem;
+  width: 1rem;
+  z-index: 1;
+}
+
+.history-year {
+  color: var(--color-main-dark);
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.4;
+  margin: 1.35rem 0 0;
+  text-align: right;
+}
+
+.history-timeline-content,
+.history-record-card {
+  background: var(--color-paper);
+  border-radius: 1rem;
+  box-shadow: 0 16px 32px rgb(0 0 0 / 0.12);
+  padding: 1.6rem;
+}
+
+.history-timeline-content {
+  border-left: 8px solid var(--color-main);
+}
+
+.history-timeline-content h3,
+.history-record-card h3 {
+  color: var(--color-black);
+  font-size: 1.35rem;
+  line-height: 1.4;
+  margin: 0 0 0.6rem;
+}
+
+.history-timeline-content p,
+.history-record-card p {
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.history-records-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.history-record-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.history-record-type {
+  color: var(--color-main-dark);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  margin: 0 0 0.8rem;
+}
+
+.history-record-meta {
+  border-bottom: 1px solid #e9e3dc;
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin: 0 0 1rem;
+  padding-bottom: 1rem;
+}
+
+.history-record-card--empty {
+  border: 2px dashed #c9c2ba;
+  box-shadow: none;
 }
 
 /* ==========================================================================
@@ -1519,6 +1639,10 @@ a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .history-records-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .terakoya-opening h2 {
     font-size: clamp(3.5rem, 8vw, 6rem);
   }
@@ -1601,21 +1725,47 @@ a {
   }
 
   .members-hero,
-  .voices-hero {
+  .voices-hero,
+  .history-hero {
     min-height: 13rem;
     padding-bottom: 3rem;
     padding-top: 3rem;
   }
 
   .members-section,
-  .voices-section {
+  .voices-section,
+  .history-section {
     padding-bottom: 3.5rem;
     padding-top: 3.5rem;
   }
 
   .members-grid,
-  .voices-grid {
+  .voices-grid,
+  .history-records-grid {
     grid-template-columns: 1fr;
+  }
+
+  .history-section--records {
+    padding-top: 0;
+  }
+
+  .history-timeline::before {
+    left: 0.55rem;
+  }
+
+  .history-timeline-item {
+    gap: 0.75rem;
+    grid-template-columns: 1fr;
+    padding-left: 2rem;
+  }
+
+  .history-timeline-item::before {
+    left: 0;
+  }
+
+  .history-year {
+    margin: 0;
+    text-align: left;
   }
 
   .members-join,
