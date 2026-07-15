@@ -567,13 +567,15 @@ a {
 
 .members-page,
 .voices-page,
-.history-page {
+.history-page,
+.support-page {
   background: var(--color-bg);
 }
 
 .members-hero,
 .voices-hero,
-.history-hero {
+.history-hero,
+.support-hero {
   align-items: center;
   background:
     linear-gradient(135deg, #fff7ed 0%, #fffaf5 42%, var(--color-bg) 100%);
@@ -588,7 +590,8 @@ a {
 
 .members-hero::after,
 .voices-hero::after,
-.history-hero::after {
+.history-hero::after,
+.support-hero::after {
   background: linear-gradient(90deg, var(--color-main), var(--color-main-light));
   bottom: 0;
   content: "";
@@ -600,7 +603,8 @@ a {
 
 .members-hero > div,
 .voices-hero > div,
-.history-hero > div {
+.history-hero > div,
+.support-hero > div {
   border-left: 6px solid var(--color-main);
   max-width: 760px;
   padding-left: clamp(1.2rem, 3vw, 2rem);
@@ -619,7 +623,8 @@ a {
 
 .members-hero h2,
 .voices-hero h2,
-.history-hero h2 {
+.history-hero h2,
+.support-hero h2 {
   font-size: clamp(2.7rem, 7vw, 5rem);
   letter-spacing: -0.04em;
   line-height: 1.1;
@@ -628,7 +633,8 @@ a {
 
 .members-hero .members-hero-lead,
 .voices-hero .voices-hero-lead,
-.history-hero .history-hero-lead {
+.history-hero .history-hero-lead,
+.support-hero .support-hero-lead {
   color: var(--color-muted);
   font-size: clamp(1rem, 2vw, 1.2rem);
   font-weight: 700;
@@ -639,7 +645,8 @@ a {
 
 .members-section,
 .voices-section,
-.history-section {
+.history-section,
+.support-section {
   margin: 0 auto;
   max-width: var(--content-width);
   padding: 4.5rem 1rem;
@@ -819,6 +826,39 @@ a {
 .member-soon-body p {
   color: var(--color-muted);
   margin: 0;
+}
+
+/* ==========================================================================
+   Support Page
+   ========================================================================== */
+
+.support-preparing {
+  align-items: center;
+  background: var(--color-paper);
+  border-left: 8px solid var(--color-main);
+  box-shadow: 0 16px 32px rgb(0 0 0 / 0.1);
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.support-preparing img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.support-preparing p {
+  color: var(--color-muted);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 700;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.support-preparing p + p {
+  margin-top: 0.7rem;
 }
 
 /* ==========================================================================
@@ -1726,7 +1766,8 @@ a {
 
   .members-hero,
   .voices-hero,
-  .history-hero {
+  .history-hero,
+  .support-hero {
     min-height: 13rem;
     padding-bottom: 3rem;
     padding-top: 3rem;
@@ -1734,7 +1775,8 @@ a {
 
   .members-section,
   .voices-section,
-  .history-section {
+  .history-section,
+  .support-section {
     padding-bottom: 3.5rem;
     padding-top: 3.5rem;
   }
@@ -1743,6 +1785,14 @@ a {
   .voices-grid,
   .history-records-grid {
     grid-template-columns: 1fr;
+  }
+
+  .support-preparing {
+    grid-template-columns: 1fr;
+  }
+
+  .support-preparing img {
+    max-width: 8rem;
   }
 
   .history-section--records {
