@@ -74,5 +74,14 @@ window.memberData = [
     photo: "img/member/meina.jpeg",
     alt: "西山芽衣菜のプロフィール写真",
     message: "みんなが安心して楽しく学び，自分らしく過ごせる場所作ってます！"
+  },
+  {
+    name: "奥野 櫂仁",
+    kana: "おくの かいと",
+    roman: "Okuno Kaito",
+    dept: "情報科学科2年",
+    photo: "img/member/kaito.jpg",
+    alt: "奥野櫂仁のプロフィール写真",
+    message: "一緒に楽しく勉強しましょう！"
   }
 ];
